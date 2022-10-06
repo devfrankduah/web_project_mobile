@@ -1,4 +1,4 @@
-package com.sandipbhattacharya.webviewdemo;
+package com.example.project3;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,16 +14,16 @@ import java.net.URISyntaxException;
 
 public class MainActivity extends AppCompatActivity {
     // Declare an WebView object reference
-    WebView web;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Get a reference to our WebView object
-        web = findViewById(R.id.webView);
+        webView = (WebView) findViewById(R.id.webView);
         // Create a WebSettings object
-        WebSettings webSettings = web.getSettings();
+        WebSettings webSettings = webView.getSettings();
         // For using Zoom feature
         // webSettings.setBuiltInZoomControls(true);
         // Enable JavaScript using the WebSettings object
@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
          over where a clicked link load, create your own WebViewClient that
          overrides the shouldOverrideUrlLoading() method.
          */
-        web.setWebViewClient(new Callback());
-        web.loadUrl("https://azubi.000webhostapp.com/login.php");
+        webView.setWebViewClient(new Callback());
+        webView.loadUrl("http://esug.infinityfreeapp.com/login.php");
     }
 
     private class Callback extends WebViewClient {
@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
     // Additional code.
     @Override
     public void onBackPressed() {
-        if (web.canGoBack()) {
-            web.goBack();
+        if (webView.canGoBack()) {
+            webView.goBack();
         } else {
             super.onBackPressed();
         }

@@ -1,4 +1,4 @@
-package com.sandipbhattacharya.webviewdemo;
+package com.example.project3;
 
 import org.junit.Test;
 
